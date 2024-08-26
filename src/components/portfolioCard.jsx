@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import he from "he";
 import Form from "./Form";
 import Header from "./Bootstrap/Header";
-import Code from "./Code";
 import Preview from "./Preview";
 import { useNavigate } from "react-router-dom";
 import NavbarDesign1 from ".././components/options/navbar/NavbarDesign1";
@@ -23,6 +22,7 @@ import Experience2 from "./options/experience/option2";
 import EducationDesign1 from './options/education/option1'
 import EducationDesign2 from './options/education/option2'
 import EducationDesign3 from './options/education/option3'
+import Code from "./Code";
 
 const PortfolioCard = (state,{
   experienceTitle,
@@ -91,25 +91,23 @@ const PortfolioCard = (state,{
         });
   };
 
-  const clickHandler = async () => {
-    Navigate("/main");
-  };
-
   const download = async () => {
     try {
-      let output = he.decode(
-        document.getElementsByClassName("codefile")[0].innerHTML
-      );
-      
-      const blob = new Blob([output]);
-      const fileDownloadUrl2 = URL.createObjectURL(blob);
-
-      setInitialState((prevState) => {
-        return {
-          ...prevState,
-          fileDownloadUrl: fileDownloadUrl2,
-        };
-      });
+      const codeFileElements = document.getElementsByClassName("codefile");
+  
+      // Check if the element exists
+      if (codeFileElements.length > 0) {
+        let output = he.decode(codeFileElements[0].innerHTML);
+        
+        const blob = new Blob([output]);
+        const fileDownloadUrl2 = URL.createObjectURL(blob);
+  
+        setInitialState((prevState) => {
+          return {
+            ...prevState,
+            fileDownloadUrl: fileDownloadUrl2,
+          };
+        });
 
       const resolveAfter3Sec = new Promise((resolve) =>
         setTimeout(resolve, 3000)
@@ -122,6 +120,9 @@ const PortfolioCard = (state,{
         position: "top-right",
         autoClose: 3100, // Adjust the duration as needed
       });
+    } else {
+      throw new Error("Codefile element not found.");
+    }
     } catch (error) {
       // Handle any errors that occur during the download process
       console.error("Download error:", error);
@@ -678,20 +679,11 @@ const PortfolioCard = (state,{
     </style>
     `;
 
-      // Add the custom styles to the HTML
       projectSection += customStyles2;
     } else {
       projectSection = "";
     }
   }
-
-  // const buttonStyle = {
-  //   margin: "0 10px",
-  //   padding: "10px 20px",
-  //   border: "none",
-  //   borderRadius: "5px",
-  //   cursor: "pointer",
-  // };
 
 
   return (
@@ -895,26 +887,6 @@ const PortfolioCard = (state,{
           </div>
           <div className="p-3 w-full md:w-1/2 h-[26.8rem] md:h-full overflow-y-scroll border py-2 px-2 md:px-4 mb-2 rounded-lg">
             <ul className="flex">
-              {/* <li className="mr-2">
-                <span
-                  className={`cursor-pointer px-2 md:px-4 py-2 rounded-t-lg ${
-                    !initialState.PreviewMode
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-300 text-black"
-                  }`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setInitialState((prevState) => {
-                      return {
-                        ...prevState,
-                        PreviewMode: false,
-                      };
-                    });
-                  }}
-                >
-                  Code
-                </span>
-              </li> */}
               <li className="my-1">
                 <span
                   className={`cursor-pointer px-2 md:px-4 py-2 rounded-t-lg ${
@@ -936,6 +908,7 @@ const PortfolioCard = (state,{
                 </span>
               </li>
             </ul>
+            {true? (
               <Preview
                 {...initialState.FormData}
                 FullName={`${initialState.FormData.FirstName} ${initialState.FormData.LastName}`}
@@ -948,6 +921,20 @@ const PortfolioCard = (state,{
                 TopPortion={selectedTopPortionDesign}
                 Projectdesign={projectSection}
               />
+            ) : (
+              <Code
+                {...initialState.FormData}
+                FullName={`${initialState.FormData.FirstName} ${initialState.FormData.LastName}`}
+                EducationDesign={selectedEducationDesign}
+                ExperienceDesign={selectedExperienceDesign}
+                isSkillEnabled={isSkillEnabled}
+                isAwardsEnabled={isAwardsEnabled}
+                isInterestEnabled={isInterestEnabled}
+                Navbar={selectedNavbarDesign}
+                TopPortion={selectedTopPortionDesign}
+                Projectdesign={projectSection}
+              />
+            )}
           </div>
         </div>
       </div>

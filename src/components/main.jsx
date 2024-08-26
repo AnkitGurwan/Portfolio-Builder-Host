@@ -1,12 +1,8 @@
-import React, { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import AuthContext from '../context/auth/AuthContext';
-import Card from './navigateCard';
 import NewCard from './newCard';
 
 const HomePage = () => {
-    const { getToken, logOut, studInfo, setStudInfo } = useContext(AuthContext);
     const [searchParams] = useSearchParams();
 
     // Fetch user information from localStorage or using the provided code

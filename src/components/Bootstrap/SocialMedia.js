@@ -9,8 +9,6 @@ const SocialMedia = ({
 }) => {
   const [allFieldsFilled, setAllFieldsFilled] = useState(0);
 
-  console.log(MediaData[Object.keys(MediaData)[0]])
-
   useEffect(() => {
     if (value["Facebook"] && value["WhatsApp"] && value["Instagram"] && value["Twitter"]&& value["LinkedIn"]&& value["GitHub"] && value["StackOverflow"])
     {

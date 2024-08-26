@@ -1,11 +1,9 @@
 import { connect } from "react-redux";
-import flowerImage from "./images/Vector.png"
+import Form from "./Form";
+import React, { useEffect } from "react";
+import { useState } from "react"
+import HomePage from "./home";
 import flowerImage2 from "./images/Vector2.png"
-import flowerImage3 from "./images/Vector3.png"
-import HalfStar from "./images/half_star.png"
-import BlueStar from "./images/bluestar.jpg"
-import Scratch from "./images/sratch.png"
-import Arrow from "./images/arrow.png"
 import FullStarExperience from "./images/fullStarExperience.png"
 import HalfStarExperience from "./images/halfSttarExperience.png"
 
@@ -34,7 +32,6 @@ const Code = ({
   TopPortion,
   EducationDesign,
   ExperienceDesign
-  
 }) => {
   const Meta = {
     Facebook: ["facebook-f", "https://fb.me/"],
@@ -173,6 +170,7 @@ const Code = ({
   } else {
     awardSection = "";
   }
+ 
 
 
   return (

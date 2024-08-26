@@ -1,59 +1,39 @@
-// Timeline.js
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import flowerImage2 from "../../images/Vector2.png";
 
-const Timeline = (props) => {
-    const {educationTitle, education} = props;
+const Option1 = (props) => {
+  const { educationTitle, education } = props;
 
-    return (
-        <div id='education' className="min-h-screen  flex items-center justify-center bg-white text-black" style={{fontFamily:"cursive"}}>
-        <div className="max-w-screen-lg w-full mx-auto">
-            <div className='mt-12 mb-2 md:mb-0 text-lg md:text-2xl text-center lowercase'>{educationTitle}.</div>
-            <div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="relative wrap overflow-hidden p-2 md:p-8 bg-white rounded-md"
-            >
-                {education && education.map((education, index) => (
-                <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.1 }}
-                    className={`mb-2 md:mb-4 flex justify-between items-center cursor-default ${
-                    index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'
-                    }`}
-                >
-                    <div className="order-1 w-5/12"></div>
+  return (
+    <section className="w-full h-screen bg-gray-900 text-white" id="education" style={{ fontFamily: 'sans-serif' }}>
+      <div className="w-full px-4 md:px-32 pt-24 md:pt-32 relative">
+        <div className="w-full text-center mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold mb-2" style={{ fontFamily: 'roboto', color: '#FFF7E9' }}>
+            {educationTitle}
+          </h1>
+          <p className="text-lg md:text-xl text-gray-400">Explore My Educational Journey</p>
+        </div>
+        
+        <div className="absolute right-10 bottom-20">
+          <img className="h-20 w-20 opacity-50" src={flowerImage2} alt="flower" />
+        </div>
 
-                    <div
-                    className={`mx-2 order-1 p-2 w-12 h-12 md:w-16 md:h-16 rounded-full border border-black flex items-center justify-center`}
-                    >
-                    <span className="text-xs font-medium text-center">
-                        {`${education.education.start} - ${education.education.end ? education.education.end : education.education.presentJob ? 'Present' : ''}`}
-                    </span>
-                    </div>
-
-                    <div
-                    className={`order-1 w-5/12 border border-opacity-40 p-4 shadow-md rounded-md flex flex-col items-center ${
-                        index % 2 === 0 ? 'text-right pr-6 md:pr-10 md:items-end' : 'text-left pl-6 md:pl-10 md:items-start'
-                    }`}
-                    >
-                    <p className="mb-3 md:mb-2 text-lg font-medium text-gray-800 leading-4 md:leading-none">
-                        {education.education.degree}
-                    </p>
-                    <p className="text-xs text-black leading-4 md:leading-none">{education.education.branch}</p>
-                    <p className="text-xs leading-4 md:leading-none">CGPA: {education.education.gpa}</p>
-                    </div>
-                </motion.div>
-                ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          {education && education.map((item, index) => (
+            <div key={index} className="bg-gray-800 rounded-lg shadow-lg p-6">
+              <h2 className="text-2xl font-semibold mb-2">{item.education.university}</h2>
+              <p className="text-lg mb-4">{item.education.degree}</p>
+              <p className="text-sm text-gray-400">CGPA: {item.education.gpa}</p>
+              <p className="text-sm text-gray-400 mb-2">{item.education.branch}</p>
+              <p className="text-sm text-gray-500">
+                {`${item.education.start} - ${item.education.end ? item.education.end : item.education.presentJob ? 'Present' : ''}`}
+              </p>
             </div>
+          ))}
         </div>
-        </div>
-    );
+      </div>
+    </section>
+  );
 };
 
-export default Timeline;
+export default Option1;

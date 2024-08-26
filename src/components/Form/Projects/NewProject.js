@@ -6,7 +6,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const NewProjectForm = ({ onCreatePressed,onChangeDesign }) => {
+const NewProjectForm = ({ onCreatePressed, onChangeDesign }) => {
   const [projectData, setProjectData] = useState({
     name: "",
     description: "",
@@ -24,11 +24,6 @@ const NewProjectForm = ({ onCreatePressed,onChangeDesign }) => {
   });
   const [selectedDesign, setSelectedDesign] = useState("design1"); 
 
-  const handleDesignSelection = (design) => {
-    setSelectedDesign(design);
-    onChangeDesign(design);
-    console.log(design);
-  };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -42,28 +37,28 @@ const NewProjectForm = ({ onCreatePressed,onChangeDesign }) => {
 
     if(!projectData.name)
     {
-      toast.warning("Projct Namw in Projects section not filled!", {
+      toast.warning("Project name not filled!", {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
       return;
     }
     else if(!projectData.description)
     {
-      toast.warning("Project description in Projects section not filled!", {
+      toast.warning("Project description not filled!", {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
       return;
     }
     else if(!projectData.techStack)
     {
-      toast.warning("Tech Stacks in Projects section not filled!", {
+      toast.warning("Tech Stacks not filled!", {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
       return;
     }
     else if(!projectData.githubLink)
     {
-      toast.warning("Github Link in Projects section missing!", {
+      toast.warning("Github link in project is missing!", {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
       return;

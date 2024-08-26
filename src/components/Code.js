@@ -1,13 +1,6 @@
 import { connect } from "react-redux";
-import flowerImage from "./images/Vector.png"
-import flowerImage2 from "./images/Vector2.png"
-import flowerImage3 from "./images/Vector3.png"
-import HalfStar from "./images/half_star.png"
-import BlueStar from "./images/bluestar.jpg"
-import Scratch from "./images/sratch.png"
-import Arrow from "./images/arrow.png"
-import FullStarExperience from "./images/fullStarExperience.png"
-import HalfStarExperience from "./images/halfSttarExperience.png"
+import React from "react";
+import FullStarExperience from "./images/fullStarExperience.png";
 
 const Code = ({
   FullName,
@@ -20,13 +13,14 @@ const Code = ({
   Email,
   Socials,
   skills,
+  projects,
+  projectsTitle,
   interests,
   awards,
-  Projectdesign,
   Colour,
   skillsTitle,
   interestsTitle,
-  awardsTitle,
+  isProjectEnabled,
   isSkillEnabled,
   isInterestEnabled,
   isAwardsEnabled,
@@ -34,7 +28,6 @@ const Code = ({
   TopPortion,
   EducationDesign,
   ExperienceDesign
-  
 }) => {
   const Meta = {
     Facebook: ["facebook-f", "https://fb.me/"],
@@ -45,6 +38,9 @@ const Code = ({
     GitHub: ["github", "https://github.com/"],
     StackOverflow: ["stack-overflow", "https://stackoverflow.com/u/"],
   };
+
+  console.log("121");
+  console.log(projects);
 
   let skillsSection;
 
@@ -58,9 +54,11 @@ const Code = ({
           <div class="mt-12 md:mt-20 md:px-24 flex flex-wrap">
             ${skills
               .map((skill) => 
-                `<div class="w-28 md:w-32 h-24">
+                `<div class="w-28 md:w-32 h-24 py-1">
                   <div class="h-full pt-2 pb-1 px-2 flex flex-col items-center justify-between">
-                    <div class="h-1/2 flex items-center px-2 md:pb-4"><img src="${skill.url}" class="h-12 md:h-16 w-12 md:w-16" /></div>
+                    <div class="h-1/2 flex items-center px-2 md:pb-4">
+                      <img src="${skill.url}" class="h-12 md:h-16 w-12 md:w-16 object-cover" />
+                    </div>
                     <div class="h-1/2 flex items-center text-sm text-center leading-3">${skill.name}</div>
                   </div>
                 </div>
@@ -142,6 +140,142 @@ const Code = ({
     interestSection = "";
   }
 
+  let projectSection;
+
+  if (isProjectEnabled) {
+    projectSection = `
+          <!-- Projects -->
+          <section class="w-full h-screen" id="projects" style="font-family:Poppins" >
+            <div class="w-full px-4 md:px-32 pt-12 md:pt-24">
+            <div class="w-full mt-10 md:mt-2 md:pl-24 mb-6 md:mb-8 text-3xl" style="font-family:roboto;color:rgba(255, 247, 233, 0.9)">${projectsTitle}</div>
+            <div class="w-full mt-4 md:pl-24 flex flex-col gap-y-2" style="font-family:roboto;color:rgba(255, 247, 233, 0.8)">
+              ${projects && projects.length > 0 && projects
+                .map(
+                  (project) => `
+
+                  <div class="project-card border flex flex-col gap-y-1 p-2 md:p-3">
+                    
+                        <div class="flex justify-between items-center" style="font-family:roboto;color:rgba(255, 247, 233, 0.9)">
+                          <div class="text-lg">${project.project.name}</div>
+                          <div class="text-sm">
+                            ${project.project.timeline}
+                          </div>  
+                        </div>
+                        <div class="text-sm flex justify-between items-center" style="font-family:roboto;color:rgba(255, 247, 233, 0.9)">
+                          <div>
+                            ${project.project.guidedByProfessor 
+                              ? 
+                              `<div class=""><i>${project.project.professorName}</i></div>`
+                              :
+                              ""
+                            }
+
+                            ${project.project.isClubProject
+                              ?
+                              `<div class="">${project.project.clubName}</div>`
+                              :
+                              ""
+                            }
+                            ${project.project.isSelfProject 
+                              ?
+                              `<div class=""><i>Self Project</i></div>`
+                              :
+                              ""
+                            }
+                          </div>
+                          <div class="flex">
+                            ${
+                              project.project.githubLink
+                                ? 
+                                `<a class="hover:text-gray-400" href=${project.project.githubLink} target="_blank">Github</a>`
+                                : ""
+                            }
+                            <span class="mx-1">|</span>
+                            ${
+                              project.project.websiteLink
+                              ?
+                              `<a class="hover:text-gray-400" href=${project.project.websiteLink} target="_blank">Website</a>`
+                              : ""
+                            }
+                          </div>
+                        </div>
+                        
+                        <div class="text-sm py-2 leading-5 tracking-wide">
+                          <div class="flex ">${project.project.description} 
+                        </div>
+                          
+                        </div>
+                        <div class="text-sm">Key technologies : ${
+                          project.project.techStack
+                        }</div>
+                        
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              `
+                )
+                .join("\n")}
+            </div>
+          </section>
+          <hr class="m-0" />
+        `;
+
+      const customStyles2 = `
+          <style>
+            /* Add this CSS to style the project cards */
+            .project-card {
+              border: 1px solid #ddd;
+              border-radius: 5px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+            }
+      
+            .project-top img {
+              max-width: 100%;
+              max-height: 50vh;
+              object-fit: contain;
+              margin: 10px 0;
+              min-height:150px;
+            }
+      
+            .project-bottom {
+              background-color: #0074d9; /* Blue background */
+              color: #fff; /* White text color */
+              padding: 20px;
+              position: relative;
+            }
+      
+            .project-bottom h3 {
+              font-size: 1.8rem; /* Bigger font size for project name */
+              margin: 0 0 10px;
+            }
+      
+            .project-bottom .tech-stack,
+            .project-bottom .description,
+            .project-info {
+              margin: 10px 0;
+            }
+      
+            .date {
+              /* Adjust this for desired position */
+              position: absolute;
+              bottom: 10px;
+              right: 10px;
+            }
+      
+            /* Add more CSS for styling links, headers, and other elements as desired */
+          </style>
+        `;
+
+      // Add the custom styles to the HTML
+      projectSection += customStyles2;
+    }  
+    else {
+    interestSection = "";
+  }
+
   let awardSection;
 
   if (isAwardsEnabled) {
@@ -152,7 +286,7 @@ const Code = ({
       <div class="fa-ul px-8 md:px-24 mt-10 md:mt-12 flex flex-col gap-3 md:gap-4">
         ${awards.map(
           (award) => `
-          <div class="relative w-[90vw] py-2 pr-2 pl-2 md:pl-8 rounded-lg border normal-case min-h-16 flex items-center">
+          <div class="relative w-[80vw] py-4 pr-2 pl-2 md:pl-8 rounded-lg border normal-case min-h-16 flex items-center">
               <li>
               ${award.award.award}
               </li>
@@ -256,7 +390,7 @@ const Code = ({
 
               <!--Projects-->
               <div class="absolute h-screen top-[700vh] left-0 w-full">
-                ${Projectdesign}
+                ${projectSection}
               </div>
 
               <div class="absolute h-screen top-[800vh] left-0 w-full" id="touch" style="background:rgba(222, 95, 59, 1)">
@@ -320,6 +454,5 @@ const mapStateToProps = (state) => ({
   interestsTitle: state.title.interestsTitle,
   awardsTitle: state.title.awardsTitle,
   educationTitle: state.title.educationTitle,
-});
-
+})
 export default connect(mapStateToProps)(Code);

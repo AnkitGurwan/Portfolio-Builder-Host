@@ -43,6 +43,16 @@ let availableSkills = [
       url: "https://www.patterns.dev/img/reactjs/react-logo@3x.svg"
     },
     {
+      name: "flutter",
+      image: "flutter.png",
+      url: "https://cdn-images-1.medium.com/v2/resize:fit:1200/1*5-aoK8IBmXve5whBQM90GA.png"
+    },
+    {
+      name: "django",
+      image: "django.png",
+      url: "https://miro.medium.com/v2/resize:fit:1400/1*HVKOLLX7wprRbHTl2IPDcQ.png"
+    },
+    {
       name: "Data Structures",
       image: "data_structures.png",
       url: "https://yt3.googleusercontent.com/h0n8phylgeZKuMlGmcPhkOM8rkV1IHTr5oumqZL581iQCSeMeFrnmYB69a69RQAQoVqgxM5ENX8=s900-c-k-c0x00ffffff-no-rj"

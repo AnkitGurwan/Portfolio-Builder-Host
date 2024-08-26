@@ -9,7 +9,7 @@ import SkillsList from "./Form/Skills/SkillsList";
 import { SectionTitle } from "./sectionTitle/sectionTitle";
 
 const Form = ({ FormData, onChange, isExperienceEnabled, isEducationEnabled, isSkillEnabled, isInterestEnabled, isAwardsEnabled,
-  isProjectEnabled,toggleProject,toggleExperience,toggleEducation,toggleSkill,toggleInterest,toggleAward }) => {
+  isProjectEnabled, toggleProject, toggleExperience, toggleEducation, toggleSkill, toggleInterest, toggleAward }) => {
   const Desc = {
     FullName: [
       "text",
@@ -125,7 +125,7 @@ const Form = ({ FormData, onChange, isExperienceEnabled, isEducationEnabled, isS
         )
       )}
        <div className={isExperienceEnabled ?"bg-white my-8" : "bg-gray-200 my-4 p-2 rounded-lg flex flex-col gap-y-3"}>
-        {isExperienceEnabled ? (
+        {true ? (
           <>
             <SectionTitle initialTitle="Experience" titleType="experience"/>
             <ExperienceList />
@@ -134,13 +134,13 @@ const Form = ({ FormData, onChange, isExperienceEnabled, isEducationEnabled, isS
           <p className="">Experience section is disabled.</p>
         )}
         
-        <button className={"text-white  w-full py-1 " + (isExperienceEnabled ? "bg-red-100 hover:bg-red-300 rounded-b-lg":"bg-green-600 hover:bg-green-500 rounded-sm")} onClick={toggleExperience}>
+        {/* <button className={"text-white  w-full py-1 " + (isExperienceEnabled ? "bg-red-100 hover:bg-red-300 rounded-b-lg":"bg-green-600 hover:bg-green-500 rounded-sm")} onClick={toggleExperience}>
           {isExperienceEnabled ? 'Remove' : 'Add'} Experience Section
-        </button>
+        </button> */}
       </div>
 
       <div className={isEducationEnabled ?"bg-white my-8" : "bg-gray-200 my-4 p-2 rounded-lg flex flex-col gap-y-3"}>
-        {isEducationEnabled ? (
+        {true ? (
           <>
             <SectionTitle initialTitle="Education" titleType='education'/>
             <EducationList />
@@ -148,13 +148,13 @@ const Form = ({ FormData, onChange, isExperienceEnabled, isEducationEnabled, isS
         ) : (
           <p>Education section is disabled.</p>
         )}
-        <button className={"text-white  w-full py-1 " + (isEducationEnabled ? "bg-red-100 hover:bg-red-300 rounded-b-lg":"bg-green-600 hover:bg-green-500 rounded-sm")} onClick={toggleEducation}>
+        {/* <button className={"text-white  w-full py-1 " + (isEducationEnabled ? "bg-red-100 hover:bg-red-300 rounded-b-lg":"bg-green-600 hover:bg-green-500 rounded-sm")} onClick={toggleEducation}>
           {isEducationEnabled ? 'Remove' : 'Add'} Education Section
-        </button>
+        </button> */}
       </div>
       
       <div className={isSkillEnabled ?"bg-white my-8" : "bg-gray-200 my-4 p-2 rounded-lg flex flex-col gap-y-3"}>
-      {isSkillEnabled ? (
+      {true ? (
           <>
             <SectionTitle initialTitle="Skills" titleType="skills"/>
             <SkillsList />
@@ -162,12 +162,12 @@ const Form = ({ FormData, onChange, isExperienceEnabled, isEducationEnabled, isS
         ) : (
           <p>Skills section is disabled.</p>
         )}
-        <button className={"text-white  w-full py-1 " + (isSkillEnabled ? "bg-red-100 hover:bg-red-300 rounded-b-lg":"bg-green-600 hover:bg-green-500 rounded-sm")} onClick={toggleSkill}>
+        {/* <button className={"text-white  w-full py-1 " + (isSkillEnabled ? "bg-red-100 hover:bg-red-300 rounded-b-lg":"bg-green-600 hover:bg-green-500 rounded-sm")} onClick={toggleSkill}>
           {isSkillEnabled ? 'Remove' : 'Add'} Skills Section
-        </button>
+        </button> */}
       </div>
 
-      <div className={isInterestEnabled ?"bg-white my-8" : "bg-gray-200 my-4 p-2 rounded-lg flex flex-col gap-y-3"}>
+      {/* <div className={isInterestEnabled ?"bg-white my-8" : "bg-gray-200 my-4 p-2 rounded-lg flex flex-col gap-y-3"}>
       {isInterestEnabled ? (
           <>
            <SectionTitle initialTitle="Interests" titleType="interests"/>
@@ -179,10 +179,10 @@ const Form = ({ FormData, onChange, isExperienceEnabled, isEducationEnabled, isS
         <button className={"text-white  w-full py-1 " + (isInterestEnabled ? "bg-red-100 hover:bg-red-300 rounded-b-lg":"bg-green-600 hover:bg-green-500 rounded-sm")} onClick={toggleInterest}>
           {isInterestEnabled ? 'Remove' : 'Add'} Interest Section
         </button>
-      </div>
+      </div> */}
 
       <div className={isAwardsEnabled ?"bg-white my-8" : "bg-gray-200 my-4 p-2 rounded-lg flex flex-col gap-y-3"}>
-      {isAwardsEnabled ? (
+      {true ? (
           <>
            <SectionTitle initialTitle="Awards" titleType="awards"/>
            <AwardList />
@@ -190,13 +190,10 @@ const Form = ({ FormData, onChange, isExperienceEnabled, isEducationEnabled, isS
         ) : (
           <p>Awards section is disabled.</p>
         )}
-        <button className={"text-white  w-full py-1 " + (isAwardsEnabled ? "bg-red-100 hover:bg-red-300 rounded-b-lg":"bg-green-600 hover:bg-green-500 rounded-sm")} onClick={toggleAward}>
-          {isAwardsEnabled ? 'Remove' : 'Add'} Awards Section
-        </button>
       </div>
       
       <div className={isProjectEnabled ? "bg-white my-8" : "bg-gray-200 my-4 p-2 rounded-lg flex flex-col gap-y-3"}>
-      {isProjectEnabled ? (
+      {true ? (
           <>
            <SectionTitle initialTitle="Projects" titleType="projects"/>
            <ProjectList />
@@ -204,9 +201,6 @@ const Form = ({ FormData, onChange, isExperienceEnabled, isEducationEnabled, isS
         ) : (
           <p>Projects section is disabled.</p>
         )}
-        <button className={"text-white  w-full py-1 " + (isProjectEnabled ? "bg-red-100 hover:bg-red-300 rounded-b-lg":"bg-green-600 hover:bg-green-500 rounded-sm")} onClick={toggleProject}>
-          {isProjectEnabled ? 'Remove' : 'Add'} Projects Section
-        </button>
       </div>
     </div>
   );

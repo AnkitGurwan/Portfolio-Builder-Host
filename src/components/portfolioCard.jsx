@@ -24,17 +24,15 @@ import EducationDesign2 from './options/education/option2'
 import EducationDesign3 from './options/education/option3'
 import Code from "./Code";
 
-const PortfolioCard = (state,{
+const PortfolioCard = (state, {
   experienceTitle,
   skillsTitle,
   interestsTitle,
   awardsTitle,
   educationTitle,
-  projectsTitle,
-  selectedDesign,
-  projects
+  projectsTitle
 }) => {
-  const Navigate = useNavigate();
+  const projects = state.projects && state.projects.length > 0 && state.projects.map((projectObj) => projectObj.project);
 
   const data = {
     FormData: {
@@ -358,332 +356,6 @@ const PortfolioCard = (state,{
       break;
   }
 
-  let projectSection;
-
-  if (isProjectEnabled) {
-    if (selectedDesign === "design1") {
-      projectSection = `
-          <!-- Projects -->
-          <section class="w-full h-screen" id="projects" style="font-family:Poppins" >
-            <div class="w-full px-4 md:px-32 pt-12 md:pt-24">
-            <div class="w-full mt-10 md:mt-2 md:pl-24 mb-4 text-3xl" style="font-family:roboto;color:rgba(255, 247, 233, 1)">${projectsTitle}</div>
-            <div class="w-full mt-4 md:pl-24 flex flex-col gap-y-2" style="font-family:roboto;color:rgba(255, 247, 233, 0.8)">
-              ${projects
-                .map(
-                  (project) => `
-
-                  <div class="project-card border flex flex-col gap-y-1 p-2 md:p-3">
-                    
-                        <div class="flex justify-between items-center" style="font-family:roboto;color:rgba(255, 247, 233, 0.9)">
-                          <div class="text-lg">${project.project.name}</div>
-                          <div class="text-sm">
-                            ${project.project.timeline}
-                          </div>  
-                        </div>
-                        <div class="text-sm flex justify-between items-center" style="font-family:roboto;color:rgba(255, 247, 233, 0.9)">
-                          <div>
-                            ${project.project.guidedByProfessor 
-                              ? 
-                              `<div class=""><i>${project.project.professorName}</i></div>`
-                              :
-                              ""
-                            }
-
-                            ${project.project.isClubProject
-                              ?
-                              `<div class="">${project.project.clubName}</div>`
-                              :
-                              ""
-                            }
-                            ${project.project.isSelfProject 
-                              ?
-                              `<div class=""><i>Self Project</i></div>`
-                              :
-                              ""
-                            }
-                          </div>
-                          <div class="flex">
-                            ${
-                              project.project.githubLink
-                                ? 
-                                `<a class="hover:text-gray-400" href=${project.project.githubLink} target="_blank">Github</a>`
-                                : ""
-                            }
-                            <span class="mx-1">|</span>
-                            ${
-                              project.project.websiteLink
-                              ?
-                              `<a class="hover:text-gray-400" href=${project.project.websiteLink} target="_blank">Website</a>`
-                              : ""
-                            }
-                          </div>
-                        </div>
-                        
-                        <div class="text-sm leading-5 tracking-wide">
-                          <div class="flex ">${project.project.description.slice(0,200)} <span class="text-blue-200 hover:text-blue-300  cursor-pointer">read more...</span></div>
-                          
-                        </div>
-                        <div class="text-sm">Technology Stack : ${
-                          project.project.techStack
-                        }</div>
-                        
-                    </div>
-                  </div>
-                  </div>
-                </div>
-              `
-                )
-                .join("\n")}
-            </div>
-          </section>
-          <hr class="m-0" />
-        `;
-
-      const customStyles2 = `
-          <style>
-            /* Add this CSS to style the project cards */
-            .project-card {
-              border: 1px solid #ddd;
-              border-radius: 5px;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-            }
-      
-            .project-top img {
-              max-width: 100%;
-              max-height: 50vh;
-              object-fit: contain;
-              margin: 10px 0;
-              min-height:150px;
-            }
-      
-            .project-bottom {
-              background-color: #0074d9; /* Blue background */
-              color: #fff; /* White text color */
-              padding: 20px;
-              position: relative;
-            }
-      
-            .project-bottom h3 {
-              font-size: 1.8rem; /* Bigger font size for project name */
-              margin: 0 0 10px;
-            }
-      
-            .project-bottom .tech-stack,
-            .project-bottom .description,
-            .project-info {
-              margin: 10px 0;
-            }
-      
-            .date {
-              /* Adjust this for desired position */
-              position: absolute;
-              bottom: 10px;
-              right: 10px;
-            }
-      
-            /* Add more CSS for styling links, headers, and other elements as desired */
-          </style>
-        `;
-
-      // Add the custom styles to the HTML
-      projectSection += customStyles2;
-    } 
-    else if (selectedDesign == "design2") {
-      projectSection = `
-    <!-- Projects -->
-    <section class="resume-section" id="projects">
-      <div class="container-fluid p-0">
-        <h2 class="mb-5 text-black">${projectsTitle}</h2>
-        <div class="col-lg-12 mb-5">
-          ${projects
-            .map(
-              (project) => `
-            <div class="col-lg-12 mb-5">
-              <div class="project-card lg:max-w-[10000px] md:max-h-[500px] flex border-[1px] border-solid border-[#ddd] rounded-[5px] mb-[20px] relative overflow-hidden">
-                <div class="project-image mh-[100%] object-contain max-w-[100%] grow shrink basis-0 items-center justify-center relative min-w-[220px] ">
-
-
-               
-
-
-                  <img src="${project.project.image}" alt="${
-                project.project.name
-              }" class="img-fluid">
-                </div>
-                <div class="project-details md:max-w-[600px] mt-[10px] mb-0 mx-0 break-words bg-[#0074d9] text-[1.8rem]  text-white p-[20px] flex flex-col justify-between max-h-[1000px] max-w-[300px] overflow-hidden">
-                  <h3 class="text-white break-words mt-0 mb-[10px] mx-0 text-[1.8rem] ">${project.project.name}</h3>
-                  <p class="tech-stack mt-[10px] mb-0 break-words text-white"><strong>Technology Stack: </strong>${
-                    project.project.techStack
-                  }</p>
-                  <p class="description break-words mt-[10px] mb-0  text-white">${
-                    project.project.description
-                  }</p>
-                  <div class="project-info">
-                    <div class="mb-3 text-white"><strong>Guided by Professor: </strong>${
-                      project.project.guidedByProfessor ? "Yes" : "No"
-                    }</div>
-                    ${
-                      project.project.professorName
-                        ? `
-                      <div class="mb-3 text-white"><strong>Professor's Name: </strong>${project.project.professorName}</div>
-                    `
-                        : ""
-                    }
-                    <div class="mb-3 text-white"><strong>Club Project: </strong>${
-                      project.project.isClubProject ? "Yes" : "No"
-                    }</div>
-                    ${
-                      project.project.clubName
-                        ? `
-                      <div class="mb-3 text-white"><strong>Club Name: </strong>${project.project.clubName}</div>
-                    `
-                        : ""
-                    }
-                    <div class="mb-3 text-white"><strong>Self-Project: </strong>${
-                      project.project.isSelfProject ? "Yes" : "No"
-                    }</div>
-                    <div class="date text-white" style="position: absolute; bottom: 0; right: 0;"><strong>Date: </strong>${
-                      project.project.timeline
-                    }</div>
-                    <div class="dropdown dropup text-white">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="projectLinks" data-bs-toggle="dropdown" data-bs-placement="top" aria-expanded="false">
-                        Links
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="projectLinks">
-                        ${
-                          project.project.websiteLink
-                            ? `
-                          <li><a class="dropdown-item" href="${project.project.websiteLink}" target="_blank">Visit Website</a></li>
-                        `
-                            : ""
-                        }
-                        ${
-                          project.project.githubLink
-                            ? `
-                          <li><a class="dropdown-item" href="${project.project.githubLink}" target="_blank">GitHub Repository</a></li>
-                        `
-                            : ""
-                        }
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          `
-            )
-            .join("\n")}
-        </div>
-      </div>
-    </section>
-    <hr class="m-0" />`;
-
-      const customStyles2 = `
-    <style>
-    /* Add this CSS to style the project cards */
-   
-    .project-card {
-      display: flex;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      overflow: hidden;
-      position: relative;
-      margin-bottom: 20px; /* Added margin for spacing between project cards */
-    }
-    
-    .project-image {
-      flex: 1;
-      max-width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      min-width:220px;
-    }
-    
-    .project-image img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain; /* Fit image within available space */
-    }
-    
-    .project-date {
-      position: absolute;
-      bottom: 10px; /* Adjust this value for the desired vertical position */
-      right: 10px; /* Adjust this value for the desired horizontal position */
-    }
-    
-    .project-details {
-      background-color: #0074d9;
-      color: #fff;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      max-height: 1000px; /* Adjust the maximum height as needed */
-      max-width: 300px;
-      overflow: hidden;
-    }
-    
-    .project-details h3 {
-      font-size: 1.8rem; /* Bigger font size for project name */
-      margin: 0 0 10px;
-      word-wrap: break-word;
-    }
-    
-    .project-details .tech-stack,
-    .project-details .description,
-    .project-info {
-      margin: 10px 0;
-      word-wrap: break-word;
-     
-    }
-    
-    .link-button {
-      background-color: #fff;
-      color: #000; /* Black text color */
-      border: none;
-      border-radius: 20px;
-      padding: 5px 15px;
-      cursor: pointer;
-    }
-    
-    .link-button:hover {
-      background-color: #007BFF; /* Blue on hover */
-      color: #fff;
-    }
-    /* Center the projects */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-@media screen and (min-width: 768px) {
-  .project-card{
-    max-height: 500px; /* Adjusted max-height for larger screens */
-  }
-  .project-details
-  {
-    max-width:600px;
-  }
-  @media screen and (min-width: 1024px) {
-    .project-card {
-      max-width: 10000px; /* Adjusted max-width for larger screens */
-    }
-  }
-}
-    /* Add more CSS for styling links, headers, and other elements as desired */
-    
-    </style>
-    `;
-
-      projectSection += customStyles2;
-    } else {
-      projectSection = "";
-    }
-  }
 
 
   return (
@@ -935,12 +607,16 @@ const PortfolioCard = (state,{
                 FullName={`${initialState.FormData.FirstName} ${initialState.FormData.LastName}`}
                 EducationDesign={selectedEducationDesign}
                 ExperienceDesign={selectedExperienceDesign}
+                isEducationEnabled={isEducationEnabled}
+                isExperienceEnabled={isExperienceEnabled}
                 isSkillEnabled={isSkillEnabled}
-                isAwardsEnabled={isAwardsEnabled}
                 isInterestEnabled={isInterestEnabled}
+                isAwardsEnabled={isAwardsEnabled}
+                isProjectEnabled={isProjectEnabled}
                 Navbar={selectedNavbarDesign}
                 TopPortion={selectedTopPortionDesign}
-                Projectdesign={projectSection}
+                projectsTitle="Projects"
+                projects={projects}
               />
             ) : (
               <Code
@@ -948,12 +624,14 @@ const PortfolioCard = (state,{
                 FullName={`${initialState.FormData.FirstName} ${initialState.FormData.LastName}`}
                 EducationDesign={selectedEducationDesign}
                 ExperienceDesign={selectedExperienceDesign}
+                isEducationEnabled={isEducationEnabled}
+                isExperienceEnabled={isExperienceEnabled}
                 isSkillEnabled={isSkillEnabled}
-                isAwardsEnabled={isAwardsEnabled}
                 isInterestEnabled={isInterestEnabled}
+                isAwardsEnabled={isAwardsEnabled}
+                isProjectEnabled={isProjectEnabled}
                 Navbar={selectedNavbarDesign}
                 TopPortion={selectedTopPortionDesign}
-                Projectdesign={projectSection}
               />
             )}
           </div>
@@ -974,7 +652,7 @@ const mapStateToProps = (state) => ({
   awardsTitle: state.title.awardsTitle,
   educationTitle: state.title.educationTitle,
   projectsTitle: state.title.projectsTitle,
-  selectedDesign: state.projects.selectedDesign,
-  projects: state.projects.items.map((projectObj) => projectObj.project)});
+  projects: state.projects.items
+});
 
 export default connect(mapStateToProps)(PortfolioCard);

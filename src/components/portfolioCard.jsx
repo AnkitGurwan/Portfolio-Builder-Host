@@ -632,6 +632,8 @@ const PortfolioCard = (state, {
                 isProjectEnabled={isProjectEnabled}
                 Navbar={selectedNavbarDesign}
                 TopPortion={selectedTopPortionDesign}
+                projectsTitle="Projects"
+                projects={projects}
               />
             )}
           </div>

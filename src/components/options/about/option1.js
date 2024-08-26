@@ -90,10 +90,10 @@ const Option1 = (props) => {
             <img src={Arrow} alt="arrow" />
           </div>
           <div
-            className="absolute -left-[5.3rem] md:-left-[5.5rem] -bottom-[3.5rem] md:-bottom-20 h-36 md:h-40 w-36 md:w-40 -rotate-[33deg] text-2xl"
+            className="absolute -left-[5.5rem] md:-left-[5.5rem] -bottom-[3.7rem] md:-bottom-20 h-36 md:h-40 w-36 md:w-40 -rotate-[33deg] text-2xl"
             style={{ fontFamily: "Roboto", color: "rgba(255, 247, 233, 1)" }}
           >
-            ME
+            me
           </div>
           <div className="absolute -left-32 md:-left-32 -bottom-[4.5rem] md:-bottom-[6.3rem] h-32 w-32 -rotate-6">
             <img src={Scratch} />

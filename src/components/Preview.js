@@ -59,7 +59,7 @@ const Preview = ({
           <div class="mt-12 md:mt-20 md:px-24 flex flex-wrap">
             ${skills
               .map((skill) => 
-                `<div class="w-28 md:w-32 h-24 py-1">
+                `<div class="w-28 md:w-36 h-24 md:h-28 py-1">
                   <div class="h-full pt-2 pb-1 px-2 flex flex-col items-center justify-between">
                     <div class="h-1/2 flex items-center px-2 md:pb-4">
                       <img src="${skill.url}" class="h-12 md:h-16 w-12 md:w-16 object-cover" />

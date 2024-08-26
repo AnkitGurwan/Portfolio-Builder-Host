@@ -167,7 +167,7 @@ const Form = ({ FormData, onChange, isExperienceEnabled, isEducationEnabled, isS
         </button> */}
       </div>
 
-      {/* <div className={isInterestEnabled ?"bg-white my-8" : "bg-gray-200 my-4 p-2 rounded-lg flex flex-col gap-y-3"}>
+      <div className={isInterestEnabled ?"bg-white my-8" : "bg-gray-200 my-4 p-2 rounded-lg flex flex-col gap-y-3"}>
       {isInterestEnabled ? (
           <>
            <SectionTitle initialTitle="Interests" titleType="interests"/>
@@ -179,7 +179,7 @@ const Form = ({ FormData, onChange, isExperienceEnabled, isEducationEnabled, isS
         <button className={"text-white  w-full py-1 " + (isInterestEnabled ? "bg-red-100 hover:bg-red-300 rounded-b-lg":"bg-green-600 hover:bg-green-500 rounded-sm")} onClick={toggleInterest}>
           {isInterestEnabled ? 'Remove' : 'Add'} Interest Section
         </button>
-      </div> */}
+      </div>
 
       <div className={isAwardsEnabled ?"bg-white my-8" : "bg-gray-200 my-4 p-2 rounded-lg flex flex-col gap-y-3"}>
       {true ? (

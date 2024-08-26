@@ -41,9 +41,9 @@ const Option1 = (props) => {
         >
           {experienceTitle}
         </div>
-        <div className="w-full px-4 md:px-12 mt-12 md:mt-16 flex gap-4 md:gap-8 ml-4 md:ml-28">
+        <div className="w-full px-4 md:px-12 mt-12 md:mt-16 flex flex-col md:flex-row gap-4 md:gap-8 ml-4 md:ml-28">
           {experience && experience.map((item, index) => (
-            <div key={index} className="w-32 md:w-52 p-4 rounded-lg border">
+            <div key={index} className="w-40 md:w-60 p-4 rounded-lg border">
               <div className="flex flex-col items-center">
                 <img
                   src=

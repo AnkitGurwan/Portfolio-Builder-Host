@@ -12,7 +12,7 @@ const Header = () => {
         <div className="text-lg md:text-2xl mr-1 tracking-tight font-medium md:font-semibold leading-5">
           Portfolio Builder
         </div>
-        <div className="hidden md:block text-xs mb-2">Product for Ease</div>
+        <div className="hidden md:block text-xs mb-2">Build for Ease</div>
       </div>
     </div>
   );

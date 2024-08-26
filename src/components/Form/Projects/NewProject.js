@@ -95,7 +95,7 @@ const NewProjectForm = ({ onCreatePressed,onChangeDesign }) => {
     <div className="border rounded p-4">
       <input
         type="text"
-        className="mt-4 w-1/2 dark:bg-zinc-800 form-control form-control-sm mb-2 border py-1 px-2 rounded-l-sm text-sm capitalize outline-none"
+        className="mt-4 w-1/3 dark:bg-zinc-800 form-control form-control-sm mb-2 border py-1 px-2 rounded-l-sm text-sm capitalize outline-none"
         name="name"
         placeholder="Project Name"
         value={projectData.name}
@@ -103,7 +103,7 @@ const NewProjectForm = ({ onCreatePressed,onChangeDesign }) => {
       />
       <input
         type="text"
-        className="w-1/2 dark:bg-zinc-800 form-control form-control-sm mb-2 border py-1 px-2 rounded-r-sm text-sm capitalize outline-gray-200"
+        className="ml-1 w-1/2 dark:bg-zinc-800 form-control form-control-sm mb-2 border py-1 px-2 rounded-r-sm text-sm capitalize outline-gray-200"
         name="image"
         placeholder="Project Image URL"
         value={projectData.image}
@@ -119,7 +119,7 @@ const NewProjectForm = ({ onCreatePressed,onChangeDesign }) => {
       
       <input
         type="text"
-        className="dark:bg-zinc-800 form-control form-control-sm mb-2 border py-1 px-2 rounded-l-sm text-sm capitalize outline-none"
+        className="dark:bg-zinc-800 form-control form-control-sm mb-2 border py-1 px-2 mr-1 rounded-l-sm text-sm capitalize outline-none"
         name="techStack"
         placeholder="Tech Stack"
         value={projectData.techStack}
@@ -127,7 +127,7 @@ const NewProjectForm = ({ onCreatePressed,onChangeDesign }) => {
       />
       <input
         type="text"
-        className="dark:bg-zinc-800 form-control form-control-sm mb-2 border py-1 px-2 text-sm capitalize outline-none"
+        className="dark:bg-zinc-800 form-control form-control-sm mb-2 border py-1 px-2 mr-1 text-sm capitalize outline-none"
         name="websiteLink"
         placeholder="Website Link"
         value={projectData.websiteLink}

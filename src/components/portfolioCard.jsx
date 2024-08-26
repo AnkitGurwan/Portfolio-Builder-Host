@@ -886,8 +886,28 @@ const PortfolioCard = (state,{
             </a>
           </div>
           <div className="p-3 w-full md:w-1/2 h-[26.8rem] md:h-full overflow-y-scroll border py-2 px-2 md:px-4 mb-2 rounded-lg">
-            <ul className="flex">
-              <li className="my-1">
+            <ul className="flex mb-1">
+            <li className="mr-2">
+                <span
+                  className={`cursor-pointer px-2 md:px-4 py-2 rounded-t-lg ${
+                    !initialState.PreviewMode
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-300 text-black"
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setInitialState((prevState) => {
+                      return {
+                        ...prevState,
+                        PreviewMode: false,
+                      };
+                    });
+                  }}
+                >
+                  Code
+                </span>
+              </li>
+              <li className="mr-2">
                 <span
                   className={`cursor-pointer px-2 md:px-4 py-2 rounded-t-lg ${
                     initialState.PreviewMode
@@ -908,7 +928,8 @@ const PortfolioCard = (state,{
                 </span>
               </li>
             </ul>
-            {true? (
+
+            {initialState.PreviewMode ? (
               <Preview
                 {...initialState.FormData}
                 FullName={`${initialState.FormData.FirstName} ${initialState.FormData.LastName}`}

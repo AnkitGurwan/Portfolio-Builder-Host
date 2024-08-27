@@ -68,7 +68,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onSelectSkill: (skill) => {
-    console.log("onSelectSkill called with skill:", skill); // Add this line
     dispatch(selectSkill(skill));
   },});
 

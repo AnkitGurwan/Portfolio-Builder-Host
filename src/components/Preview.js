@@ -1,11 +1,6 @@
 import { connect } from "react-redux";
-import Form from "./Form";
-import React, { useEffect } from "react";
-import { useState } from "react"
-import HomePage from "./home";
-import flowerImage2 from "./images/Vector2.png"
-import FullStarExperience from "./images/fullStarExperience.png"
-import HalfStarExperience from "./images/halfSttarExperience.png"
+import React from "react";
+import FullStarExperience from "./images/fullStarExperience.png";
 
 const Preview = ({
   FullName,
@@ -43,9 +38,6 @@ const Preview = ({
     GitHub: ["github", "https://github.com/"],
     StackOverflow: ["stack-overflow", "https://stackoverflow.com/u/"],
   };
-
-  console.log("121");
-  console.log(projects);
 
   let skillsSection;
 
@@ -287,8 +279,8 @@ const Preview = ({
     awardSection = ` 
     <section class="w-full h-screen" id="awards" style="font-family:Poppins" >
       <div class="w-full px-4 md:px-32 pt-20 md:pt-24">
-      <i class="fas fa-trophy text-warning text-5xl ml-24"></i>
-      <div class="fa-ul px-8 md:px-24 mt-10 md:mt-12 flex flex-col gap-3 md:gap-4">
+      <i class="fas fa-trophy text-warning text-5xl ml-6"></i>
+      <div class="fa-ul px-8 mt-10 md:mt-12 flex flex-col gap-3 md:gap-4">
         ${awards.map(
           (award) => `
           <div class="relative w-[80vw] py-4 pr-2 pl-2 md:pl-8 rounded-lg border normal-case min-h-16 flex items-center">

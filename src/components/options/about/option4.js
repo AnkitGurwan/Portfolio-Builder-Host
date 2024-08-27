@@ -1,13 +1,9 @@
 import React from 'react';
-import flowerImage from "../../images/Vector.png"
-import flowerImage2 from "../../images/Vector2.png"
-import HalfStar from "../../images/half_star.png"
-import { Link } from 'react-router-dom';
+import HalfStar from "../../images/half_star.png";
 
 
 const option4 = (props) => {
-    const { FirstName, LastName, Thubmnail, Keywords, Description, Email, Colour, Address} = props;
-    console.log(props)
+    const { FirstName, LastName, Thubmnail, Keywords, Description, Address} = props;
   return (
         <div className=''>
             <div className="bg-white h-screen w-full absolute left-0 top-0 flex flex-col md:flex-row" style={{"fontFamily":"Manrope","color":"rgba(5, 15, 40, 1)"}}>

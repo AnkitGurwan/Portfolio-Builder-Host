@@ -1,11 +1,7 @@
 import React from 'react';
-import flowerImage from "../../images/Vector.png"
-import flowerImage2 from "../../images/Vector2.png"
-import HalfStar from "../../images/half_star.png"
 
 const option3 = (props) => {
-    const { FirstName, LastName, Thubmnail, Keywords, Description, Email, Colour, Address} = props;
-    console.log(props)
+    const { FirstName, LastName, Thubmnail, Keywords, Description} = props;
   return (
         <div>
             <div className="h-screen w-full absolute left-0 top-0 bg-black">

@@ -39,8 +39,6 @@ const Code = ({
     StackOverflow: ["stack-overflow", "https://stackoverflow.com/u/"],
   };
 
-  console.log("121");
-  console.log(projects);
 
   let skillsSection;
 
@@ -54,7 +52,7 @@ const Code = ({
           <div class="mt-12 md:mt-20 md:px-24 flex flex-wrap">
             ${skills
               .map((skill) => 
-                `<div class="w-28 md:w-32 h-24 py-1">
+                `<div class="w-28 md:w-36 h-24 md:h-28 py-1">
                   <div class="h-full pt-2 pb-1 px-2 flex flex-col items-center justify-between">
                     <div class="h-1/2 flex items-center px-2 md:pb-4">
                       <img src="${skill.url}" class="h-12 md:h-16 w-12 md:w-16 object-cover" />
@@ -282,8 +280,8 @@ const Code = ({
     awardSection = ` 
     <section class="w-full h-screen" id="awards" style="font-family:Poppins" >
       <div class="w-full px-4 md:px-32 pt-20 md:pt-24">
-      <i class="fas fa-trophy text-warning text-5xl ml-24"></i>
-      <div class="fa-ul px-8 md:px-24 mt-10 md:mt-12 flex flex-col gap-3 md:gap-4">
+      <i class="fas fa-trophy text-warning text-5xl ml-6"></i>
+      <div class="fa-ul px-8 mt-10 md:mt-12 flex flex-col gap-3 md:gap-4">
         ${awards.map(
           (award) => `
           <div class="relative w-[80vw] py-4 pr-2 pl-2 md:pl-8 rounded-lg border normal-case min-h-16 flex items-center">

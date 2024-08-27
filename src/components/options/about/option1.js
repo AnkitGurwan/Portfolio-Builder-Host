@@ -4,8 +4,6 @@ import flowerImage2 from "../../images/Vector2.png";
 import HalfStar from "../../images/half_star.png";
 import Scratch from "../../images/sratch.png";
 import Arrow from "../../images/arrow.png";
-import FullStarExperience from "../../images/fullStarExperience.png";
-import HalfStarExperience from "../../images/halfSttarExperience.png";
 
 const Option1 = (props) => {
   const {
@@ -13,13 +11,9 @@ const Option1 = (props) => {
     LastName,
     Thubmnail,
     Keywords,
-    Description,
-    Email,
-    Colour,
-    Address
+    Description
   } = props;
 
-  console.log(props);
 
   return (
     <div>
@@ -90,7 +84,7 @@ const Option1 = (props) => {
             <img src={Arrow} alt="arrow" />
           </div>
           <div
-            className="absolute -left-[5.5rem] md:-left-[5.5rem] -bottom-[3.7rem] md:-bottom-20 h-36 md:h-40 w-36 md:w-40 -rotate-[33deg] text-2xl"
+            className="absolute -left-[5.7rem] md:-left-[5.5rem] -bottom-[3rem] md:-bottom-20 h-36 md:h-40 w-36 md:w-40 -rotate-[33deg] text-2xl"
             style={{ fontFamily: "Roboto", color: "rgba(255, 247, 233, 1)" }}
           >
             me

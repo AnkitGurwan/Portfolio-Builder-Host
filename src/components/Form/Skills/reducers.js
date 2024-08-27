@@ -172,19 +172,11 @@ const skills = (state = initialState, action) => {
   switch (type) {
     case SELECT_SKILL: {
       const { skill } = payload;
-      console.log("SELECT_SKILL reducer called with skill:", skill);
-    
-      // Check the current state of availableSkills and selectedSkills
-      console.log("Current availableSkills:", state.availableSkills);
-      console.log("Current selectedSkills:", state.selectedSkills);
+  
     
       // Apply the filter logic
       const updatedAvailableSkills = state.availableSkills.filter((s) => s.name !== skill.name);
       const updatedSelectedSkills = [...state.selectedSkills, skill];
-    
-      // Check the updated state after filtering
-      console.log("Updated availableSkills:", updatedAvailableSkills);
-      console.log("Updated selectedSkills:", updatedSelectedSkills);
     
       // Return the updated state
       return {

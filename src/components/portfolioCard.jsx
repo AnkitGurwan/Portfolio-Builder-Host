@@ -6,7 +6,6 @@ import he from "he";
 import Form from "./Form";
 import Header from "./Bootstrap/Header";
 import Preview from "./Preview";
-import { useNavigate } from "react-router-dom";
 import NavbarDesign1 from ".././components/options/navbar/NavbarDesign1";
 import NavbarDesign2 from ".././components/options/navbar/NavbarDesign2";
 import NavbarDesign3 from "./options/navbar/NavbarDesign3";
@@ -57,7 +56,7 @@ const PortfolioCard = (state, {
       },
     },
     fileDownloadUrl: null,
-    PreviewMode: false,
+    PreviewMode: true,
   };
   const [initialState, setInitialState] = useState(data);
   

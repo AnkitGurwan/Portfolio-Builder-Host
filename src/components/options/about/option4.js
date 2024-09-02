@@ -84,7 +84,7 @@ const option4 = (props) => {
                     <div className="mb-3 md:mb-6 font-medium text-2xl md:text-4xl" style={{"fontFamily":
                     "Manrope"}}>About</div>
                     <div className="my-3 font-light text-[1rem] leading-6 tracking-wide" style={{"fontFamily":
-                    "Manrope"}}>{Description.slice(0,300)}</div>
+                    "Manrope"}}>{Description.slice(0,500)}</div>
                     <div className="absolute left-0 bottom-60 md:bottom-36 h-16 w-16"><img src={HalfStar} /></div>
                 </div> 
                 

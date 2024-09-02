@@ -27,7 +27,7 @@ const option3 = (props) => {
                         <img className="h-40 md:h-48 w-40 md:w-48 border rounded-full pt-3 bg-red-500" src={Thubmnail} alt={FirstName}/>
                     </div>
                     <div className="w-full text-center md:w-3/4 px-4 md:px-0 my-2 font-extralight text-[1rem] md:text-[1.05rem] leading-6 tracking-wide" style={{"fontFamily":
-                    "monospace","color":"rgba(255, 255, 255, 1)"}}>{Description.slice(0,300)}</div>
+                    "monospace","color":"rgba(255, 255, 255, 1)"}}>{Description.slice(0,500)}</div>
                     
                   </div>
                   

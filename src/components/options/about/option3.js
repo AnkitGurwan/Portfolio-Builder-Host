@@ -1,7 +1,7 @@
 import React from 'react';
 
 const option3 = (props) => {
-    const { FirstName, LastName, Thubmnail, Keywords, Description} = props;
+    const { FirstName, LastName, Thubmnail, Keywords, Description, URL} = props;
   return (
         <div>
             <div className="h-screen w-full absolute left-0 top-0 bg-black">
@@ -13,7 +13,7 @@ const option3 = (props) => {
                   <p className="text-center text-2xl md:text-3xl font-norma uppercase" style={{"fontFamily":"roboto","color":"rgba(255, 255, 255, 1)"}}>{Keywords}</p>  
                   <div className="mt-10 flex">
                         <a href="#touch" className='px-5 py-2 rounded-xl mr-2 cursor-pointer hover:opacity-90 hover:text-white border' style={{"color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(28, 28, 28, 1)","borderColor":"rgba(255, 255, 255, 1)"}}>Contact</a>
-                        <div className='px-5 py-2 rounded-xl border ml-2 cursor-pointer hover:opacity-90' style={{"backgroundColor":"rgba(255, 255, 255, 1)","color":"rgba(57, 57, 57, 1)"}}>Resume</div>
+                        <a href={URL}  target="_blank" className='px-5 py-2 rounded-xl border ml-2 cursor-pointer hover:opacity-90' style={{"backgroundColor":"rgba(255, 255, 255, 1)","color":"rgba(57, 57, 57, 1)"}}>Resume</a>
                 </div>              
               </div>
             </div>

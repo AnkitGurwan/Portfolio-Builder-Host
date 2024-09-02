@@ -23,7 +23,7 @@ let availableSkills = [
       url: "https://www.devopsschool.com/blog/wp-content/uploads/2022/03/java_logo_icon_168609.png"
     },
     {
-      name: "Javascript",
+      name: "JavaScript",
       image: "javascript.png",
       url: "https://media.licdn.com/dms/image/D4E12AQFfe1nZbaWdMw/article-cover_image-shrink_720_1280/0/1698604163003?e=2147483647&v=beta&t=rtD52hfy37nFVmc4_MXfnflV6C-ke773W70SYJLoWRc"
     },
@@ -31,6 +31,11 @@ let availableSkills = [
       name: "Next.js",
       image: "next.png",
       url: "https://miro.medium.com/v2/resize:fit:1400/0*9ToWmeRH2_mgrDss"
+    },
+    {
+      name: "Node.js",
+      image: "node.png",
+      url: "https://miro.medium.com/v2/resize:fit:900/1*TY9uBBO9leUbRtlXmQBiug.png"
     },
     {
       name: "CSS",

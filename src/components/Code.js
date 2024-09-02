@@ -112,13 +112,13 @@ const Code = ({
 
   if (isInterestEnabled) {
     interestSection = ` 
-    <section class="w-full h-screen" id="skills" style="font-family:sans-serif" >
+    <section class="w-full h-screen" id="interests" style="font-family:sans-serif" >
         <div class="w-full px-4 md:px-32 pt-12 md:pt-28">
       
           <div class="w-full mt-10 md:px-24 md:mt-8 flex flex-col gap-5">
             ${interests.map(
               (interest) => `
-              <div class="relative w-[90vw] md:w-[70vw] py-4 pr-2 pl-2 md:pl-8 rounded-lg border">
+              <div class="relative w-[90vw] md:w-[70vw] py-4 pr-2 pl-2 md:pl-8 rounded-lg border" style={{ fontFamily: "Familjen Grotesk", color: "rgba(255, 247, 233, 0.9)" }}>
               <li>
                 ${interest.interest.interest}
               </li>
@@ -142,7 +142,7 @@ const Code = ({
   if (isProjectEnabled) {
     projectSection = `
       <!-- Projects -->
-      <section class="w-full h-screen" id="skills" style="font-family:sans-serif" >
+      <section class="w-full h-screen" id="projects" style="font-family:sans-serif" >
         <div class="w-full px-4 md:px-32 pt-12 md:pt-28">
           <div class="w-full mt-12 md:mt-3 md:pl-24 mb-2 text-4xl" style="font-family:roboto;color:rgba(255, 247, 233, 0.9)">${projectsTitle}</div>
           <div class="w-full mt-10 md:px-24 md:mt-8 flex flex-col gap-3" style="font-family:roboto;color:rgba(255, 247, 233, 0.8)">
@@ -249,9 +249,9 @@ const Code = ({
 
   if (isAwardsEnabled) {
     awardSection = ` 
-    <section class="w-full h-screen" id="skills" style="font-family:sans-serif" >
+    <section class="w-full h-screen" id="awards" style="font-family:sans-serif" >
         <div class="w-full px-4 md:px-32 pt-12 md:pt-28">
-          <i class="fas fa-trophy text-warning text-5xl mt-12 md:mt-3 md:pl-24 mb-2"></i>
+         <div class="w-full mt-12 md:mt-3 md:pl-24 mb-2 text-4xl" style="font-family:roboto;color:rgba(22, 22, 22, 1)">Achievements 🏆🏆</div>
           <div class="w-full mt-10 md:px-24 md:mt-8 flex flex-col gap-3 md:gap-4">
             ${awards.map(
               (award) => `
@@ -276,7 +276,6 @@ const Code = ({
   } else {
     awardSection = "";
   }
-
 
   return (
     <div className="Code dark:text-gray-100 overflow-y-scroll">

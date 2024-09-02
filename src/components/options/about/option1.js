@@ -68,10 +68,10 @@ const Option1 = (props) => {
             About
           </div>
           <div
-            className="my-2 pt-6 font-extralight text-[1.05rem] leading-6 tracking-wide text-xl"
+            className="my-2 pt-3 md:pt-6 font-extralight text-[1.05rem] leading-6 tracking-normal md:tracking-wide text-lg md:text-xl"
             style={{ fontFamily: "Familjen Grotesk", color: "rgba(255, 247, 233, 0.9)" }}
           >
-            {Description.slice(0, 300)}
+            {Description.slice(0, 500)}
           </div>
           <div className="absolute left-0 bottom-60 md:bottom-36 h-16 md:h-20 w-16 md:w-20">
             <img src={HalfStar} />

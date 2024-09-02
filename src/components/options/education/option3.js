@@ -20,9 +20,9 @@ const Option1 = (props) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
           {education && education.map((item, index) => (
-            <div key={index} className="bg-gray-800 rounded-lg shadow-lg p-6">
+            <div key={index} className="bg-gray-400 rounded-lg shadow-lg p-3 md:p-4">
               <h2 className="text-2xl font-semibold mb-2">{item.education.university}</h2>
-              <p className="text-lg mb-4">{item.education.degree}</p>
+              <p className="text-lg mb-2 md:mb-3">{item.education.degree}</p>
               <p className="text-sm text-gray-400">CGPA: {item.education.gpa}</p>
               <p className="text-sm text-gray-400 mb-2">{item.education.branch}</p>
               <p className="text-sm text-gray-500">

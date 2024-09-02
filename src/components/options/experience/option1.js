@@ -43,7 +43,7 @@ const Option1 = (props) => {
         </div>
         <div className="w-full px-4 md:px-12 mt-12 md:mt-16 flex flex-col md:flex-row gap-4 md:gap-8 ml-4 md:ml-28">
           {experience && experience.map((item, index) => (
-            <div key={index} className="w-40 md:w-60 p-4 rounded-lg border">
+            <div key={index} className="w-40 md:w-80 p-4 rounded-lg border">
               <div className="flex flex-col items-center">
                 <img
                   src=
@@ -67,6 +67,12 @@ const Option1 = (props) => {
                   style={{ color: 'rgba(22, 22, 22, 0.5)' }}
                 >
                   {item.experience.position}
+                </div>
+                <div
+                  className="mb-1 text-xs md:text-sm capitalize text-center"
+                  style={{ color: 'rgba(22, 22, 22, 0.5)' }}
+                >
+                  {item.experience.desc.slice(0, 100)}
                 </div>
               </div>
               <div className="text-xs md:text-sm text-gray-400 flex justify-center text-center">

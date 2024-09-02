@@ -2,7 +2,7 @@ import React from 'react';
 import HalfStar from "../../images/half_star.png";
 
 const Option2 = (props) => {
-    const { FirstName, LastName, Thubmnail, Keywords, Description, Address } = props;
+    const { FirstName, LastName, Thubmnail, Keywords, Description, Address, URL } = props;
     return (
         <div>
             <div className="h-screen w-full absolute left-0 top-0 flex flex-col md:flex-row">
@@ -18,7 +18,7 @@ const Option2 = (props) => {
                     </p>
                     <div className="mt-4 md:mt-10 flex gap-2">
                         <a href="#touch" className="w-fit px-5 py-2 rounded-xl mr-2 cursor-pointer hover:opacity-80" style={{ color: "rgba(255, 255, 255, 1)", backgroundColor: "rgba(57, 57, 57, 1)" }}>Contact</a>
-                        <div className="w-fit px-5 py-2 rounded-xl border ml-0 md:ml-2 cursor-pointer hover:opacity-80" style={{ backgroundColor: "rgba(255, 255, 255, 1)", color: "rgba(57, 57, 57, 1)" }}>Resume</div>
+                        <a href={URL}  target="_blank" className="w-fit px-5 py-2 rounded-xl border ml-0 md:ml-2 cursor-pointer hover:opacity-80" style={{ backgroundColor: "rgba(255, 255, 255, 1)", color: "rgba(57, 57, 57, 1)" }}>Resume</a>
                     </div>
                 </div>
                 <div className="md:w-1/2 mt-6 md:mt-0 flex items-center justify-center md:justify-start pl-0 md:pl-16 relative">

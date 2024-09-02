@@ -36,7 +36,7 @@ const Option1 = (props) => {
                 </div>
                 <div className="flex justify-between items-center text-sm pl-4 md:pl-6">
                   <div className="leading-5 capitalize">
-                    {item.education.degree}
+                    - {item.education.degree}
                   </div>
                   <div
                     className="pr-2 capitalize"
@@ -48,7 +48,7 @@ const Option1 = (props) => {
                 <div
                   className="text-xs md:text-sm capitalize pl-2 md:pl-6"
                 >
-                  {item.education.branch}
+                  - {item.education.branch}
                 </div>
               </div>
               <div

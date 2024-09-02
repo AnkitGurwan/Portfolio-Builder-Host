@@ -321,7 +321,7 @@ const Preview = ({
                     a:hover {color: ${Colour};}
               </style>
             </head>
-            <body class="relative w-full" id="page-top">
+            <body class="relative w-full overflow-x-hidden" id="page-top">
             <!-- Navigation-->
             ${Navbar}
 

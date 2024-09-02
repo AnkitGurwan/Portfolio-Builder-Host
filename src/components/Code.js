@@ -324,7 +324,7 @@ const Code = ({
                     a:hover {color: ${Colour};}
               </style>
             </head>
-            <body class="bg-black relative w-full" id="page-top">
+            <body class="relative w-full overflow-x-hidden" id="page-top">
             <!-- Navigation-->
             ${Navbar}
              <!-- Home + about-->

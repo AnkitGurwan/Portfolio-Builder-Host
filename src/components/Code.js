@@ -252,7 +252,7 @@ const Code = ({
     <section class="w-full h-screen" id="awards" style="font-family:sans-serif">
       <div class="w-full px-4 md:px-32 pt-12 md:pt-28">
           <div class="w-full mt-12 md:mt-3 md:pl-24 mb-2 text-4xl" style="font-family:roboto;color:rgba(22, 22, 22, 1)">
-              Achievements 🏆🏆
+              Awards 🏆🏆
           </div>
           <div class="w-full mt-10 md:px-24 md:mt-8 flex flex-col gap-3 md:gap-4">
               <ul>
@@ -346,7 +346,7 @@ const Code = ({
               </div>
 
               <!-- Interests-->
-             <div class="absolute h-screen top-[500vh] left-0 w-full">
+             <div class="bg-black absolute h-screen top-[500vh] left-0 w-full">
                 ${interestSection}
               </div>
 
@@ -356,7 +356,7 @@ const Code = ({
               </div>
 
               <!--Projects-->
-              <div class="absolute h-screen top-[700vh] left-0 w-full">
+              <div id="projects" class="bg-black absolute h-screen top-[700vh] left-0 w-full">
                 ${projectSection}
               </div>
 

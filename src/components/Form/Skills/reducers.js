@@ -33,6 +33,11 @@ let availableSkills = [
       url: "https://miro.medium.com/v2/resize:fit:1400/0*9ToWmeRH2_mgrDss"
     },
     {
+      name: "HTML",
+      image: "html.png",
+      url: "https://e7.pngegg.com/pngimages/185/866/png-clipart-html-logo-html-web-design-scalable-graphics-world-wide-web-markup-language-html5-icon-hd-miscellaneous-angle.png"
+    },
+    {
       name: "Node.js",
       image: "node.png",
       url: "https://miro.medium.com/v2/resize:fit:900/1*TY9uBBO9leUbRtlXmQBiug.png"

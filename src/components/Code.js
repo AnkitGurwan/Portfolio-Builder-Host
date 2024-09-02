@@ -51,7 +51,7 @@ const Code = ({
           <div class="mt-12 md:mt-20 md:px-24 flex flex-wrap">
             ${skills
               .map((skill) => 
-                `<div class="w-28 md:w-36 h-24 md:h-28 py-1">
+                `<div class="w-28 md:w-36 h-24 md:h-28 py-2 md:py-3">
                   <div class="h-full pt-2 pb-1 px-2 flex flex-col items-center justify-between">
                     <div class="h-1/2 flex items-center px-2 md:pb-4">
                       <img src="${skill.url}" class="h-12 md:h-16 w-12 md:w-16 object-cover" />
@@ -118,7 +118,7 @@ const Code = ({
           <div class="w-full mt-10 md:px-24 md:mt-8 flex flex-col gap-5">
             ${interests.map(
               (interest) => `
-              <div class="relative w-[90vw] md:w-[70vw] py-4 pr-2 pl-2 md:pl-8 rounded-lg border" style={{ fontFamily: "Familjen Grotesk", color: "rgba(255, 247, 233, 0.9)" }}>
+              <div class="relative w-[90vw] md:w-[70vw] py-4 pr-2 pl-2 md:pl-8 rounded-lg border" style="font-family:roboto;color:rgba(255, 247, 233, 0.9)">
               <li>
                 ${interest.interest.interest}
               </li>
@@ -249,28 +249,27 @@ const Code = ({
 
   if (isAwardsEnabled) {
     awardSection = ` 
-    <section class="w-full h-screen" id="awards" style="font-family:sans-serif" >
-        <div class="w-full px-4 md:px-32 pt-12 md:pt-28">
-         <div class="w-full mt-12 md:mt-3 md:pl-24 mb-2 text-4xl" style="font-family:roboto;color:rgba(22, 22, 22, 1)">Achievements 🏆🏆</div>
+    <section class="w-full h-screen" id="awards" style="font-family:sans-serif">
+      <div class="w-full px-4 md:px-32 pt-12 md:pt-28">
+          <div class="w-full mt-12 md:mt-3 md:pl-24 mb-2 text-4xl" style="font-family:roboto;color:rgba(22, 22, 22, 1)">
+              Achievements 🏆🏆
+          </div>
           <div class="w-full mt-10 md:px-24 md:mt-8 flex flex-col gap-3 md:gap-4">
-            ${awards.map(
-              (award) => `
-              <div class="relative w-[80vw] py-4 pr-2 pl-2 md:pl-8 rounded-lg border normal-case min-h-16 flex items-center">
-                  <li>
-                  ${award.award.award}
-                  </li>
-                  <div class="text-lg absolute px-2 -top-4 w-fit tracking-wide" style="color:rgba(222, 95, 59, 1);background:rgba(255, 247, 233, 1);border:rgba(150, 147, 127, 0.2)">Achievements</div>
-              </div>
-            <li>
-              
-            </li>
-            `
-            ).join(`
-    `)}
+              <ul>
+                  ${awards.map(
+                    (award) => `
+                    <li class="relative w-[90vw] md:w-[70vw] py-4 pr-2 pl-2 md:pl-8 rounded-lg border normal-case min-h-16 my-4 flex items-center">
+                        ${award.award.award}
+                        <div class="text-lg absolute px-2 -top-4 w-fit tracking-wide" style="color:rgba(222, 95, 59, 1);background:rgba(255, 247, 233, 1);border:rgba(150, 147, 127, 0.2)">
+                            Achievements
+                        </div>
+                    </li>`
+                  ).join('')}
+              </ul>
+          </div>
       </div>
-    </div>
   </section>
-</div>
+  </div>
     
   `;
   } else {
@@ -366,14 +365,15 @@ const Code = ({
                   <div class="w-full h-full px-4 md:px-32 pt-28" style="color:rgba(255, 247, 233, 1)">
                     <div class="h-1/3 text-4xl font-bold md:pl-24">Get in touch!</div>
                     <div class="flex flex-col md:flex-row gap-4 h-2/3 py-16 md:px-24 md:py-24">
+                      <div class="flex flex-col md:flex-row gap-4 h-2/3 py-16 md:px-24 md:py-24">
                       <div class="flex flex-col gap-y-2 md:w-1/2 h-1/2 md:h-full justify-end">
-                        <div>
+                        <div class="text-xl md:text-2xl>
                           ${Address}
                         </div>
-                        <div>
+                        <div class="text-xl md:text-2xl>
                           +91 ${Phone}
                         </div>
-                        <a class="hover:opacity-80 hover:" href="mailto:${Email}">${Email}</a>
+                        <a class="hover:opacity-80 hover:underline text-xl md:text-2xl" href="mailto:${Email}">${Email}</a>
                       </div>
                     
                     
@@ -389,7 +389,7 @@ const Code = ({
                             .map(
                               (soc) => `
                               <a class="mx-2" href="${Meta[soc][1]}${Socials[soc]}">
-                                <i class="fab fa-${Meta[soc][0]} text-3xl"></i>
+                                <i class="fab fa-${Meta[soc][0]} text-2xl md:text-5xl"></i>
                               </a>
                             `
                             )

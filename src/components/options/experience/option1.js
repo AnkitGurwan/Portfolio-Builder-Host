@@ -72,7 +72,7 @@ const Option1 = (props) => {
                   className="mb-1 text-xs md:text-sm capitalize text-center"
                   style={{ color: 'rgba(22, 22, 22, 0.5)' }}
                 >
-                  {item.experience.desc.slice(0, 100)}
+                  {item.experience.desc.slice(0, 250)}
                 </div>
               </div>
               <div className="text-xs md:text-sm text-gray-400 flex justify-center text-center">

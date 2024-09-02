@@ -331,7 +331,7 @@ const Code = ({
               ${TopPortion}
 
               <!-- Experience-->
-              <div class="absolute h-screen top-[200vh] left-0 w-full" style="background:rgba(255, 247, 233, 1)">
+              <div class="absolute h-screen top-[200vh] left-0 w-full overflow-x-hidden" style="background:rgba(255, 247, 233, 1)">
                 ${ExperienceDesign}
               </div
 

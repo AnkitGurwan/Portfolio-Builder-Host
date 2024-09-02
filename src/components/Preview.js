@@ -334,7 +334,7 @@ const Preview = ({
               </div
 
               <!-- Education-->
-              <div class="bg-black absolute h-screen top-[300vh] left-0 w-full">
+              <div class="bg-black absolute h-screen top-[300vh] left-0 w-full overflow-x-hidden">
                 ${EducationDesign}
               </div>
 

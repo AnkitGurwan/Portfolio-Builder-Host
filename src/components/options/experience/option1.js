@@ -6,7 +6,7 @@ const Option1 = (props) => {
   const { experienceTitle, experience } = props;
 
   return (
-    <section className="w-full h-screen" id="experience" style={{ fontFamily: 'sans-serif' }}>
+    <section className="w-full h-screen overflow-x-hidden" id="experience" style={{ fontFamily: 'sans-serif' }}>
       <div className="w-full px-4 md:px-32 pt-12 md:pt-24">
         <div>
           <img

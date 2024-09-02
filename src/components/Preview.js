@@ -358,7 +358,7 @@ const Preview = ({
                 ${projectSection}
               </div>
 
-              <<div class="absolute h-screen top-[800vh] left-0 w-full" id="touch" style="background:rgba(222, 95, 59, 1)">
+              <div class="absolute h-screen top-[800vh] left-0 w-full" id="touch" style="background:rgba(222, 95, 59, 1)">
                 <section class="w-full h-screen" id="awards" style="font-family:Poppins" >
                   <div class="w-full h-full px-4 md:px-32 pt-28" style="color:rgba(255, 247, 233, 1)">
                     <div class="h-1/3 text-4xl font-bold md:pl-24">Get in touch!</div>

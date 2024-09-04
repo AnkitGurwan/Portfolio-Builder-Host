@@ -21,6 +21,7 @@ import Experience2 from "./options/experience/option2";
 import EducationDesign1 from './options/education/option1'
 import EducationDesign2 from './options/education/option2'
 import EducationDesign3 from './options/education/option3'
+import GetInTouch from './options/getInTouch/option1'
 import Code from "./Code";
 
 const PortfolioCard = (state, {
@@ -355,6 +356,10 @@ const PortfolioCard = (state, {
       break;
   }
 
+  let getInTouchDesign = ReactDOMServer.renderToString(
+    <GetInTouch {...initialState.FormData}/>
+  );
+
 
 
   return (
@@ -613,6 +618,7 @@ const PortfolioCard = (state, {
                 isAwardsEnabled={isAwardsEnabled}
                 isProjectEnabled={isProjectEnabled}
                 Navbar={selectedNavbarDesign}
+                getInTouch={getInTouchDesign}
                 TopPortion={selectedTopPortionDesign}
                 projectsTitle="Projects"
                 projects={projects}
@@ -630,6 +636,7 @@ const PortfolioCard = (state, {
                 isAwardsEnabled={isAwardsEnabled}
                 isProjectEnabled={isProjectEnabled}
                 Navbar={selectedNavbarDesign}
+                getInTouch={getInTouchDesign}
                 TopPortion={selectedTopPortionDesign}
                 projectsTitle="Projects"
                 projects={projects}

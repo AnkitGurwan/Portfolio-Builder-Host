@@ -11,7 +11,8 @@ const Option1 = (props) => {
     LastName,
     Thubmnail,
     Keywords,
-    Description
+    Description,
+    URL
   } = props;
 
 
@@ -53,6 +54,11 @@ const Option1 = (props) => {
           >
             {Keywords}
           </p>
+
+          <div className="mt-4 md:mt-10 flex gap-2">
+            <a href="#touch" className="w-fit px-5 py-2 rounded-xl mr-2 cursor-pointer hover:opacity-80" style={{ color: "rgba(255, 255, 255, 1)", backgroundColor: "rgba(57, 57, 57, 1)" }}>Contact</a>
+            <a href={URL}  target="_blank" className="w-fit px-5 py-2 rounded-xl border ml-0 md:ml-2 cursor-pointer hover:opacity-80" style={{ backgroundColor: "rgba(255, 255, 255, 1)", color: "rgba(57, 57, 57, 1)" }}>Resume</a>
+          </div>
         </div>
       </div>
 
@@ -63,13 +69,13 @@ const Option1 = (props) => {
         <div className="w-full md:w-1/2 pt-16 md:pt-20 md:px-24 flex flex-col">
           <div
             className="mb-1 md:mb-3 font-semibold text-3xl"
-            style={{ fontFamily: "Familjen Grotesk", color: "rgba(255, 247, 233, 1)" }}
+            style={{ fontFamily: "Roboto", color: "rgba(255, 247, 233, 1)" }}
           >
             About
           </div>
           <div
-            className="my-2 pt-3 md:pt-6 font-extralight text-[1.05rem] leading-6 tracking-normal md:tracking-wide text-lg md:text-xl"
-            style={{ fontFamily: "Familjen Grotesk", color: "rgba(255, 247, 233, 0.9)" }}
+            className="my-2 pt-3 md:pt-6 font-extralight text-[1.05rem] leading-6 tracking-normal md:tracking-wide text-md md:text-xl"
+            style={{ fontFamily: "Roboto", color: "rgba(255, 247, 233, 0.9)" }}
           >
             {Description.slice(0, 500)}
           </div>

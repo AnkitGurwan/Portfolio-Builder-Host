@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import React from "react";
+import React, { useState } from "react";
 import FullStarExperience from "./images/fullStarExperience.png";
 
 const Code = ({
@@ -8,10 +8,6 @@ const Code = ({
   URL,
   Description,
   Keywords,
-  Address,
-  Phone,
-  Email,
-  Socials,
   skills,
   projects,
   projectsTitle,
@@ -27,17 +23,10 @@ const Code = ({
   Navbar,
   TopPortion,
   EducationDesign,
-  ExperienceDesign
+  ExperienceDesign,
+  getInTouch
 }) => {
-  const Meta = {
-    Facebook: ["facebook-f", "https://fb.me/"],
-    WhatsApp: ["whatsapp", "https://wa.me/"],
-    Instagram: ["instagram", "https://instagr.am/"],
-    Twitter: ["twitter", "https://twitter.com/"],
-    LinkedIn: ["linkedin-in", "https://linkedin.com/in/"],
-    GitHub: ["github", "https://github.com/"],
-    StackOverflow: ["stack-overflow", "https://stackoverflow.com/u/"],
-  };
+  
 
   let skillsSection;
 
@@ -361,46 +350,8 @@ const Code = ({
               </div>
 
                <div class="absolute h-screen top-[800vh] left-0 w-full" id="touch" style="background:rgba(222, 95, 59, 1)">
-                <section class="w-full h-screen" id="awards" style="font-family:Poppins" >
-                  <div class="w-full h-full px-4 md:px-32 pt-28" style="color:rgba(255, 247, 233, 1)">
-                    <div class="h-1/3 text-4xl font-bold md:pl-24">Get in touch!</div>
-                    <div class="flex flex-col md:flex-row gap-4 h-2/3 py-16 md:px-24 md:py-24">
-                      <div class="flex flex-col gap-y-2 md:w-1/2 h-1/2 md:h-full justify-end">
-                        <div>
-                          ${Address}
-                        </div>
-                        <div>
-                          +91 ${Phone}
-                        </div>
-                        <a class="hover:opacity-80 hover:" href="mailto:${Email}">${Email}</a>
-                      </div>
-                    
-                    
-                      <div class="md:w-1/2 flex h-1/2 md:h-full justify-between md:justify-center items-end">
-                        ${
-                          Object.keys(Socials).some(
-                            (soc) => Socials[soc].length > 0
-                          )
-                            ? `
-                        <div class="">
-                          ${Object.keys(Socials)
-                            .filter((soc) => Socials[soc].length > 0)
-                            .map(
-                              (soc) => `
-                              <a class="mx-2" href="${Meta[soc][1]}${Socials[soc]}">
-                                <i class="fab fa-${Meta[soc][0]} text-3xl md:text-4xl"></i>
-                              </a>
-                            `
-                            )
-                            .join("\n")}
-                        </div>`
-                            : ""
-                        }
-                      </div>
-                  </div>
-                </div>
-              </section>
-            </div>
+                  ${getInTouch}
+              </div>
             <script src="https://cdn.tailwindcss.com"></script>
           </body>
         </html>

@@ -2,7 +2,7 @@ import React from 'react';
 import FullStarExperience from "../../images/fullStarExperience.png";
 
 const option1 = (props) => {
-    const {experienceTitle, experience } = props;
+    const {experienceTitle, experience, URL } = props;
   return (
         <section className="w-full h-screen" id="experience" style={{ fontFamily: 'sans-serif',backgroundColor:"rgba(255,255,255,1)"}}>
         <div className="w-full px-0 md:px-32 pt-12 md:pt-24">
@@ -28,7 +28,7 @@ const option1 = (props) => {
             ))}
             
             </div>
-            <div className='w-fit px-5 py-2 rounded-xl border-2 mx-auto cursor-pointer hover:opacity-80' style={{"backgroundColor":"rgba(255, 255, 255, 1)","color":"rgba(57, 57, 57, 1)"}}>Resume</div>
+            <a href={URL} target='_blank' className='w-fit px-5 py-2 rounded-xl border-2 mx-auto cursor-pointer hover:opacity-80' style={{"backgroundColor":"rgba(255, 255, 255, 1)","color":"rgba(57, 57, 57, 1)"}}>Resume</a>
         </div>
         </section>
   )
